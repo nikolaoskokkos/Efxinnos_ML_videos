@@ -1026,7 +1026,15 @@ def zip_results(include_videos=True):
                 for p in files:
                     z.write(p, p.relative_to(HERE))
             print(f"{target.name}: {len(files)} files, {target.stat().st_size / 1e6:.1f} MB")
-            display(FileLink(target.name, result_html_prefix="Download: "))
+            if "google.colab" in sys.modules:
+                # Colab doesn't serve the notebook's folder, so a link leads nowhere: send the file
+                # with Colab's own download (the browser may ask to allow downloads from the page)
+                from google.colab import files
+                print(f"Downloading... (or right-click {target.relative_to(HERE.parent).as_posix()} "
+                      "in the Files panel on the left > Download)")
+                files.download(str(target))
+            else:
+                display(FileLink(target.name, result_html_prefix="Download: "))
 
     button.on_click(make)
     display(w.VBox([w.HTML("<b>Download the results</b> &nbsp; <i>choose the runs and what to include "
