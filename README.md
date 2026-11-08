@@ -1,10 +1,9 @@
-# Posidonia oceanica mapping from AUV video (Binder notebook)
+# Posidonia oceanica mapping from AUV video
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/nikolaoskokkos/Efxinnos_ML_videos/HEAD?labpath=posidonia_pipeline.ipynb)
 
 A Jupyter notebook that maps the seagrass *Posidonia oceanica* from a GoPro video and its `.srt`
-log (GPS position, depth and height above the seabed). It runs in your browser on
-[Binder](https://mybinder.org), with nothing to install:
+log (GPS position, depth and height above the seabed).
 
 1. **Enhance** the video: the water haze and green cast are removed, the sand is balanced to beige
    and the far part of the frame is given the same colour as the near seabed.
