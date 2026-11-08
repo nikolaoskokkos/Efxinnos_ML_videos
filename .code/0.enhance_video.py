@@ -1222,9 +1222,8 @@ out_w, out_h = fit_size(*frame.shape[:2], OUTPUT_MAX)
 
 try:
     import imageio_ffmpeg
-    FFMPEG = imageio_ffmpeg.get_ffmpeg_exe()
-except Exception:
-    FFMPEG = shutil.which("ffmpeg")
+    FFMPEG = shutil.which("ffmpeg") or imageio_ffmpeg.get_ffmpeg_exe()
+
 ENCODER = (["-c:v", "h264_nvenc", "-preset", "p5", "-rc", "vbr", "-cq", "19", "-b:v", "0"] if GPU is not None
            else ["-c:v", "libx264", "-preset", "fast", "-crf", "18"])
 print("Reading / writing: " + (f"ffmpeg ({'NVIDIA decoder + h264_nvenc' if GPU is not None else 'libx264'})"
