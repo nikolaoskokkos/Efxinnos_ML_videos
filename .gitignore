@@ -1,0 +1,9 @@
+# made by the notebook
+config.ini
+results/
+results.zip
+input/*_enhanced_*
+__pycache__/
+.ipynb_checkpoints/
+# notes for publishing, not part of the notebook
+BINDER_SETUP.md

@@ -1,0 +1,12 @@
+version: v11
+date: 2026-11-07 15:35
+note: yolo11s-seg, GX010287 + GX010175
+frames: GX010175, GX010287
+images: 96 train, 24 val
+shapes: 284 (46 frames with none of the classes)
+classes: posidonia_oceanica, rock
+base_model: yolo11s-seg.pt
+epochs: 150 (patience 40), imgsz 640, batch 8
+mask mAP50: 0.682
+mask mAP50-95: 0.408
+box mAP50: 0.653

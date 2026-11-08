@@ -1,0 +1,12 @@
+version: v12
+date: 2026-11-07 16:04
+note: yolo11s-seg, GX010287 + GX010175, + debris
+frames: GX010175, GX010287
+images: 96 train, 24 val
+shapes: 289 (44 frames with none of the classes)
+classes: posidonia_oceanica, rock, debris
+base_model: yolo11s-seg.pt
+epochs: 150 (patience 40), imgsz 640, batch 8
+mask mAP50: 0.610
+mask mAP50-95: 0.370
+box mAP50: 0.617
